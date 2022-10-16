@@ -9,9 +9,15 @@ import (
 	"time"
 )
 
+type card struct {
+	value string
+	suit  string
+}
+
 // Create a new type of "deck"
 // which is a slice of strings
 type deck []string
+type deck []card
 
 func newDeck() deck {
 	cards := deck{}
