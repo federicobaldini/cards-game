@@ -65,7 +65,12 @@ func newDeckFromFile(filename string) deck {
 		os.Exit(1)
 	}
 	ss := strings.Split(string(bs), ",")
-	return deck(ss)
+	new_deck := []card{}
+	for _, string_item := range ss {
+		string_card := strings.Split(string_item, " of ")
+		new_deck = append(new_deck, card{string_card[0], string_card[1]})
+	}
+	return deck(new_deck)
 }
 
 func (d deck) shuffle() {
