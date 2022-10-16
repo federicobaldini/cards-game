@@ -46,7 +46,11 @@ func deal(d deck, handSize int) (deck, deck) {
 }
 
 func (d deck) toString() string {
-	return strings.Join([]string(d), ",")
+	string_deck := []string{}
+	for _, card := range d {
+		string_deck = append(string_deck, card.value+" of "+card.suit)
+	}
+	return strings.Join([]string(string_deck), ",")
 }
 
 func (d deck) saveToFile(filename string) error {
