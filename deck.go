@@ -37,7 +37,7 @@ func newDeck() deck {
 
 func (d deck) print() {
 	for i, card := range d {
-		fmt.Println(i+1, card)
+		fmt.Println(i+1, card.value+" of "+card.suit)
 	}
 }
 
